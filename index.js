@@ -4,6 +4,9 @@ const app = express ()
 
 const DB = require ("./database/Database")
 
+const caregoriesController = require ("./categories/Controller")
+const articlesController = require ("./articles/Controller")
+
 // configs //
 
 app.set ("view engine", "ejs") // view engine ( views/ )
@@ -17,10 +20,9 @@ DB.authenticate () // Database connection and autenticate
 
 // routes //
 
-app.get ("/", (req, res) => {
+app.use ("/", caregoriesController)
+app.use ("/", articlesController)
 
-    res.render ("index")
-})
 
 // listen //
 
