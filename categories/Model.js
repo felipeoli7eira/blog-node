@@ -15,4 +15,6 @@ const Categories = DB.define ("categories", {
 
 })
 
+// Categories.sync ({ force: true })
+
 module.exports = Categories

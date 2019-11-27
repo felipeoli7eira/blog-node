@@ -4,8 +4,11 @@ const app = express ()
 
 const DB = require ("./database/Database")
 
-const caregoriesController = require ("./categories/Controller")
+const categoriesController = require ("./categories/Controller")
 const articlesController = require ("./articles/Controller")
+
+const ArticlesModel = require ("./articles/Model")
+const CategoriesModel = require ("./categories/Model")
 
 // configs //
 
@@ -20,7 +23,7 @@ DB.authenticate () // Database connection and autenticate
 
 // routes //
 
-app.use ("/", caregoriesController)
+app.use ("/", categoriesController)
 app.use ("/", articlesController)
 
 
